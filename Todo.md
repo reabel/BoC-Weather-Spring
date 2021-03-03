@@ -8,3 +8,4 @@
 - [ ] Configure templates via Thymeleaf
 - [ ] Configure Data display for Grid
 - [ ] Configure Display individual item display
+- [ ] Add front end framework (ie bootstrap) as necessary

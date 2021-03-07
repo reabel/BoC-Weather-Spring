@@ -27,3 +27,9 @@ ie (`export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64`)
 Locally tested using 1.8.0_282 in Ubuntu VM on windows
 
 and a similar version on mac
+
+### Running / Exporting
+
+`./mvnw spring-boot:run` to run locally
+
+`./mvnw clean package` to export a JAR file (Can also export WAR files). Jar file is placed within the target folder

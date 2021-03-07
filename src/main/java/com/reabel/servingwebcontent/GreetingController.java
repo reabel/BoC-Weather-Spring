@@ -15,8 +15,8 @@ public class GreetingController {
         return "greeting";
     }
 
-    @GetMapping("/error")
-    public String error() {
-        return "an error has occured";
-    }
+    // @GetMapping("/error")
+    // public String error() {
+    // return "error";
+    // }
 }

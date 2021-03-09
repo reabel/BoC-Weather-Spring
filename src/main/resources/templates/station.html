@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <form style="margin: 50px">
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -23,9 +23,33 @@
         <div class="form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div> -->
+        <div class="form-group">
+            <label for="stationName" style="font-weight: bold">station_name:</label>
+            <span id="stationName" th:text="${station.stationName}"> Station_Name </span>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <span th:text="${station.stationName}"> Station_Name </span>
+        <div class="form-group">
+            <label for="province" style="font-weight: bold">province:</label>
+            <span id="province" th:text="${station.province}"> province </span>
+        </div>
+        <div class="form-group">
+            <label for="date" style="font-weight: bold">date:</label>
+            <span id="date" th:text="${station.date}"> date </span>
+        </div>
+        <div class="form-group">
+            <label for="meanTemp" style="font-weight: bold">mean_temp:</label>
+            <span id="meanTemp" th:text="${station.meanTemp}"> meanTemp </span>
+        </div>
+        <div class="form-group">
+            <label for="highestMonthlyMaxTemp" style="font-weight: bold">highest_monthly_max_temp:</label>
+            <span id="highestMonthlyMaxTemp" th:text="${station.highestMonthlyMaxTemp}"> meanTemp </span>
+        </div>
+        <div class="form-group">
+            <label for="lowestMonthlyMinTemp" style="font-weight: bold" >lowest_monthly_min_temp:</label>
+            <span id="lowestMonthlyMinTemp" th:text="${station.lowestMonthlyMinTemp}"> lowestMonthlyMinTemp </span>
+        </div>
+        <!-- change to back button-->
+        <button type="submit" class="btn btn-primary">Back</button>
     </form>
 </body>
 </html>

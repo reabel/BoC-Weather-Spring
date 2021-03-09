@@ -19,10 +19,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:if="${records.empty}">
+                <tr th:if="${stations.empty}">
                     <td colspan="2"> No Stations Found</td>
                 </tr>
-                <tr th:each="station : ${records}">
+                <tr th:each="station : ${stations}">
                     <td><span th:text="${station.stationName}"> Station_Name </span></td>
                     <td><span th:text="${station.date}"> Date </span></td>
                     <td><span th:text="${station.meanTemp}"> Mean_Temp </span></td>

@@ -19,8 +19,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>This </td><td>is</td><td> a</td></tr>
-                <tr><td>sample table</td><td>of sorts</td><td></td></tr>
+                <tr th:if="${records.empty}">
+                    <td colspan="2"> No Stations Found</td>
+                </tr>
+                <tr th:each="station : ${records}">
+                    <td><span th:text="${station.stationName}"> Station_Name </span></td>
+                    <td><span th:text="${station.date}"> Date </span></td>
+                    <td><span th:text="${station.meanTemp}"> Mean_Temp </span></td>
+                </tr>
             </tbody>
         </table>
     </div>

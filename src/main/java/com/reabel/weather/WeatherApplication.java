@@ -1,13 +1,13 @@
-package com.reabel.servingwebcontent;
+package com.reabel.weather;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ServingWebContentApplication {
+public class WeatherApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ServingWebContentApplication.class, args);
+		SpringApplication.run(WeatherApplication.class, args);
 	}
 
 }

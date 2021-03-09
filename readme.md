@@ -14,6 +14,8 @@
 - possible use of react should time allow, based off of:
   https://spring.io/guides/tutorials/react-and-spring-data-rest/
 
+- https://spring.io/guides/tutorials/rest/
+
 - Note: ensure JAVA_HOME is set on local environment
 
 ie (`export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64`)

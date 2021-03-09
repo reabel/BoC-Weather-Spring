@@ -1,4 +1,4 @@
-package com.reabel.servingwebcontent;
+package com.reabel.weather;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

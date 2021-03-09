@@ -1,4 +1,4 @@
-package com.reabel.servingwebcontent;
+package com.reabel.weather;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class BoCApplicationController {
+public class WeatherApplicationController {
 
     @GetMapping("/table")
     public String table() {

@@ -9,16 +9,21 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 <body>
-    <table style="border: 1px solid black">
-        <thead>
-            <tr>
-                <th>Station_Name</th>
-                <th>Date</th>
-                <th>Mean_Temp</th>
-            </tr>
-        </thead>
-        <tr><td>This is a</td></tr>
-        <tr><td>sample table</td></tr>
-    </table>
+    <div id="table-container" style="margin: 50px">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr th:onclick="/record?name=this">
+                    <th>Station_Name</th>
+                    <th>Date</th>
+                    <th>Mean_Temp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>This </td><td>is</td><td> a</td></tr>
+                <tr><td>sample table</td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </div>
+    
 </body>
 </html>

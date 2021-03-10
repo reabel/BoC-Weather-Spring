@@ -18,4 +18,6 @@
   - ensure data is sent properly (important for double values)
 - [x] Add front end framework (ie bootstrap) as necessary
 - [ ] rework error page to be more verbose
-- [ ] add sample CSV
+- [x] add sample CSV
+- [ ] cleanup date formatting on display
+- [ ] update documentation

@@ -34,3 +34,4 @@ build/
 
 ###test-data###
 src/main/resources/csv/*
+!src/main/resources/csv/sample.eng-climate-summary.csv

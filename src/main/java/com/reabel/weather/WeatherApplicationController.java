@@ -32,7 +32,6 @@ public class WeatherApplicationController {
             stations = new ArrayList<>(repository.findAll());
         }
 
-        log.info("Stations:" + stations);
         log.info("sort:" + sort);
         model.addAttribute("stations", stations);
         return "table";

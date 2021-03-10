@@ -2,7 +2,7 @@
 
 - [x] Initialize Spring Project
 - [x] Add testing via JUnit or Mockito
-  - Extend testing beyond just route testing
+  - [ ]Extend testing beyond just route testing
 - [x] Initialize Routes
   - [x] Main Grid display
   - [x] Item Details page
@@ -10,9 +10,10 @@
   - [ ] Add generic header template to reduce code reuse
 - [x] Configure Data display for Grid
   - [ ] add sorting based off of date selection
-  - [ ] add navigation from grid to records
-  - [ ] Add full data display
-  - [ ] Add option to import CSV instead of manual init.
+  - [x] add navigation from grid to records
+  - [x] Add full data display
+  - [x] Add option to import CSV instead of manual init.
+  - [ ] Add display pagination
 - [x] Configure Display individual item display
   - ensure data is sent properly (important for double values)
 - [x] Add front end framework (ie bootstrap) as necessary

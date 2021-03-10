@@ -14,16 +14,19 @@ public class Station {
     private String stationName;
     private String province;
     private LocalDate date;
-    private double meanTemp;
-    private double highestMonthlyMaxTemp;
-    private double lowestMonthlyMinTemp;
+    // private double meanTemp;
+    // private double highestMonthlyMaxTemp;
+    // private double lowestMonthlyMinTemp;
+    private String meanTemp;
+    private String highestMonthlyMaxTemp;
+    private String lowestMonthlyMinTemp;
 
     // Constructors / Initializers
     Station() {
     }
 
-    Station(String stationName, String province, LocalDate date, double meanTemp, double highestMonthlyMaxTemp,
-            double lowestMonthlyMinTemp) {
+    Station(String stationName, String province, LocalDate date, String meanTemp, String highestMonthlyMaxTemp,
+            String lowestMonthlyMinTemp) {
         this.stationName = stationName;
         this.province = province;
         this.date = date;
@@ -49,15 +52,15 @@ public class Station {
         return this.date;
     }
 
-    public double getMeanTemp() {
+    public String getMeanTemp() {
         return this.meanTemp;
     }
 
-    public double getHighestMonthlyMaxTemp() {
+    public String getHighestMonthlyMaxTemp() {
         return this.highestMonthlyMaxTemp;
     }
 
-    public double getLowestMonthlyMinTemp() {
+    public String getLowestMonthlyMinTemp() {
         return this.lowestMonthlyMinTemp;
     }
 
@@ -77,15 +80,15 @@ public class Station {
         this.date = date;
     }
 
-    public void setMeanTemp(double meanTemp) {
+    public void setMeanTemp(String meanTemp) {
         this.meanTemp = meanTemp;
     }
 
-    public void setHighestMonthlyMaxTemp(double highestMonthlyMaxTemp) {
+    public void setHighestMonthlyMaxTemp(String highestMonthlyMaxTemp) {
         this.highestMonthlyMaxTemp = highestMonthlyMaxTemp;
     }
 
-    public void setLowestMonthlyMinTemp(double lowestMonthlyMinTemp) {
+    public void setLowestMonthlyMinTemp(String lowestMonthlyMinTemp) {
         this.lowestMonthlyMinTemp = lowestMonthlyMinTemp;
     }
 

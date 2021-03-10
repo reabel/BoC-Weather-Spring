@@ -1,0 +1,18 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Resource not found</title>
+</head>
+<body style="text-align: center;">
+<header th:insert="fragments/general.html :: header"> </header>
+<h2>404 - station not found</h2>
+
+<p>
+    <span th:text="${message}" th:remove="tag"></span>
+</p>
+
+</body>
+</html>

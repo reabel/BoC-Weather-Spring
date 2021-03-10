@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.ArrayList;
 
 import org.slf4j.Logger;
@@ -19,21 +21,31 @@ public class WeatherApplicationController {
         this.repository = repository;
     }
 
-    @GetMapping("/table")
-    public String table(Model model) {
-        ArrayList<Station> stations = new ArrayList<>(repository.findAll());
-        log.info("Stations:", stations);
+    @GetMapping("/")
+    public String table(@RequestParam(name = "sort", defaultValue = "desc") String sort, Model model) {
+        ArrayList<Station> stations;
+        if (sort.equals("asc")) {
+            stations = new ArrayList<>(repository.findByOrderByDateAsc());
+        } else if (sort.equals("desc")) {
+            stations = new ArrayList<>(repository.findByOrderByDateDesc());
+        } else {
+            stations = new ArrayList<>(repository.findAll());
+        }
+
+        log.info("Stations:" + stations);
+        log.info("sort:" + sort);
         model.addAttribute("stations", stations);
         return "table";
     }
 
-    // @GetMapping("/record")
-    // public String greeting(@RequestParam(name = "id", required = true,
-    // defaultValue = "Not Found") String name,
-    // Model model) {
-    // model.addAttribute("station", station);
-    // return "record";
-    // }
+    @GetMapping("/record")
+    public String greeting(@RequestParam(name = "id", required = true, defaultValue = "Not Found") String name,
+            Model model) {
+        Long parsedId = Long.parseLong(name);
+        Station station = repository.findById(parsedId).orElseThrow(() -> new StationNotFoundException(parsedId));
+        model.addAttribute("station", station);
+        return "station";
+    }
 
     @GetMapping("/record/{id}")
     public String one(@PathVariable Long id, Model model) {

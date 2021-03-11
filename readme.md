@@ -30,6 +30,8 @@ Tests can be ran using `./mvnw test` on the command line
 
 - May also need your bin `export PATH=$PATH:$JAVA_HOME/bin`
 
+- Application was build with Maven, so look for dependencies within `pom.xml`
+
 ## Additional Notes on Running / Exporting
 
 - To Run Application Locally: `./mvnw spring-boot:run`

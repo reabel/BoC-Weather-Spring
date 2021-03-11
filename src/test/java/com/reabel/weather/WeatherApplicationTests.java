@@ -43,6 +43,8 @@ class WeatherApplicationTests {
 
 	@Test
 	public void getDateFilterWithoutTo() throws Exception {
+		// Test to make sure that the filter enpoint rejects less than the required
+		// amount of filters
 		mvc.perform(MockMvcRequestBuilders.get("/filter?dateFrom=20/09/2018")).andExpect(status().isBadRequest());
 	}
 }

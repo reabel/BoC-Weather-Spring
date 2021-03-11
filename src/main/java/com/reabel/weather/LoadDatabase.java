@@ -43,7 +43,7 @@ class LoadDatabase {
             // log.info("Preloading " + repository.save(new Station()));
             String curPath = new File("").getAbsolutePath();
             String fileName = curPath.concat("/src/main/resources/csv/eng-climate-summary.csv");
-            log.info("path To CSV:" + curPath);
+            log.info("path To CSV:" + fileName);
             try (CSVReader reader = new CSVReaderBuilder(new FileReader(fileName)).withSkipLines(1).build()) {
                 List<String[]> r = reader.readAll();
 

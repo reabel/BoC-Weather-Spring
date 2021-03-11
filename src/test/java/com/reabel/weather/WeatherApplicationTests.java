@@ -26,12 +26,23 @@ class WeatherApplicationTests {
 	}
 
 	@Test
-	public void getRecorcd() throws Exception {
+	public void getRecord() throws Exception {
 		mvc.perform(MockMvcRequestBuilders.get("/record?id=1")).andExpect(status().isOk());
 	}
 
 	@Test
 	public void getNonExistingRecord() throws Exception {
 		mvc.perform(MockMvcRequestBuilders.get("/record?id=-1")).andExpect(status().isNotFound());
+	}
+
+	@Test
+	public void getDateFilter() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/filter?dateFrom=20/09/2018&dateTo=21/10/2020"))
+				.andExpect(status().isOk());
+	}
+
+	@Test
+	public void getDateFilterWithoutTo() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/filter?dateFrom=20/09/2018")).andExpect(status().isBadRequest());
 	}
 }

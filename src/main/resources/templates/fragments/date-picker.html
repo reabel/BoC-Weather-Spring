@@ -27,44 +27,35 @@
                 date_input_from.datepicker(options);
                 date_input_to.datepicker(options);
             });
-
-            function checkValues() {
-                console.log('validating');
-                var dateFrom = document.forms["myForm"]["dateFrom"].value;
-                var dateTo = document.forms["myForm"]["dateTo"].value;
-                //basic validation, could use regex to check date validity
-                //could default dateTo to today
-                if (!dateFrom ) {
-                    alert("From Date must be entered.");
-                    return false;
-                }
-                if (!dateTo) {
-                    alert("To Date must be entered.");
-                    return false;
-                }
-            }
         </script>
-         <!--TODO: add bootstrap accordian so that filter options aren't always present-->
         <div class="container">
-            
-            <div class="collapse" id="dateFilterCollapse">
-                <div class="container-fluid" style="margin: 50px; ">
-                    <div class="row">
+            <div class="modal fade" id="dateFilterModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Date Filter</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                         <!-- <div class="col-md-1col-sm-6 col-xs-12"> -->
-                            <form id="dateFilter" action="/filter?">
-                                <h3>Date Filter</h3>
-                                <div class="form-group"> <!-- Date input -->
-                                    <label class="control-label" for="dateFrom">From Date</label>
-                                    <input class="form-control" id="dateFrom" name="dateFrom" placeholder="MM/DD/YYYY" type="text" required/>
-                                </div>
-                                <div class="form-group"> <!-- Date input -->
-                                    <label class="control-label" for="dateTo">To Date</label>
-                                    <input class="form-control" id="dateTo" name="dateTo" placeholder="MM/DD/YYYY" type="text" required/>
-                                </div>
-                                <div class="form-group"> <!-- Submit button -->
-                                    <button class="btn btn-primary " name="submit" type="submit" onclick="return checkValues()">Submit</button>
-                                </div>
-                            </form>
+                        <form id="dateFilterForm" action="/filter?">   
+                            <div class="modal-body">              
+                                    <div class="form-group"> <!-- Date input -->
+                                        <label class="control-label" for="dateFrom">From Date</label>
+                                        <input class="form-control" id="dateFrom" name="dateFrom" placeholder="MM/DD/YYYY" type="text" required="true"/>
+                                    </div>
+                                    <div class="form-group"> <!-- Date input -->
+                                        <label class="control-label" for="dateTo">To Date</label>
+                                        <input class="form-control" id="dateTo" name="dateTo" placeholder="MM/DD/YYYY" type="text" required="true"/>
+                                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <!-- Form Submit button -->
+                                <button class="btn btn-primary " name="submit" type="submit" >Submit</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

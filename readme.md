@@ -4,17 +4,19 @@
 
 # Local Setup / Building
 
+- Note: ensure JAVA_HOME is set on local environment
+
+- Ensure csv file is available to run against (main CSV not provided due to size as well as data).
+  - a smaller sample file with semi-random data has been placed in `main/resources/csv/`, this can be named to `eng-climate-summary.csv` or the proper CSV can be placed in this directory under the same file name.
+- Run via mvnw file: `./mvnw spring-boot:run`
+- application can be found at `localhost:8080/`
+  - the terminal should display the port should 8080 not be available. look for `Tomcat started on port(s): %PORT% (http) with context path ''`
+
 # Running Tests
 
+Tests can be ran using `./mvnw test` on the command line
+
 # On-going dev notes
-
-- Project initialized via sprint initializr
-- Some initial setup using https://spring.io/guides/gs/serving-web-content/
-
-- possible use of react should time allow, based off of:
-  https://spring.io/guides/tutorials/react-and-spring-data-rest/
-
-- https://spring.io/guides/tutorials/rest/
 
 - Note: ensure JAVA_HOME is set on local environment
 

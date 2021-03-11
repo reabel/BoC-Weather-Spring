@@ -2,7 +2,7 @@
 
 ## Local Setup / Building
 
-> Note: ensure JAVA_HOME is set on local environment at minimum version is JDK 1.8
+> Note: ensure JAVA_HOME is set on local environment at a minimum version of JDK 1.8
 
 > All commands should be ran from the base project directory
 

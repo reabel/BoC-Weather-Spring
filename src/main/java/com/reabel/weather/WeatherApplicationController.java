@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Controller
 public class WeatherApplicationController {
-    private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
+    // private static final Logger log =
+    // LoggerFactory.getLogger(LoadDatabase.class);
     private final StationRepository repository;
 
     WeatherApplicationController(StationRepository repository) {
@@ -32,12 +33,24 @@ public class WeatherApplicationController {
             stations = new ArrayList<>(repository.findAll());
         }
 
-        log.info("sort:" + sort);
         model.addAttribute("stations", stations);
         // referencing the Parameter directly wasn't working
         // so add it to the model for thymeleaf to handle directly
         model.addAttribute("sort", sort);
         return "table";
+    }
+
+    @GetMapping("/filter")
+    public String filteredTable(@RequestParam(name = "dateFrom", required = true) String dateFrom,
+            @RequestParam(name = "dateTo", required = true) String dateTo, Model model) {
+
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dateFromParsed = LocalDate.parse(dateFrom, dateFormat);
+        LocalDate dateToParsed = LocalDate.parse(dateTo, dateFormat);
+        ArrayList<Station> stations = new ArrayList<>(repository.findByDateBetween(dateFromParsed, dateToParsed));
+
+        model.addAttribute("stations", stations);
+        return "table-sorted";
     }
 
     @GetMapping("/record")

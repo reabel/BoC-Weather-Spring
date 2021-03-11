@@ -34,6 +34,9 @@ public class WeatherApplicationController {
 
         log.info("sort:" + sort);
         model.addAttribute("stations", stations);
+        // referencing the Parameter directly wasn't working
+        // so add it to the model for thymeleaf to handle directly
+        model.addAttribute("sort", sort);
         return "table";
     }
 

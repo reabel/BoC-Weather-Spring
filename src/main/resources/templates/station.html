@@ -14,19 +14,9 @@
     
     <header th:insert="fragments/general.html :: header"> </header>
     <form style="margin: 50px">
-        <!-- <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div> -->
+        <h3>Station Record Information</h3>
+        <br/>
+        <div class="container">
         <div class="form-group">
             <label for="stationName" style="font-weight: bold">station_name:</label>
             <span id="stationName" th:text="${station.stationName}"> Station_Name </span>
@@ -51,8 +41,10 @@
             <label for="lowestMonthlyMinTemp" style="font-weight: bold" >lowest_monthly_min_temp:</label>
             <span id="lowestMonthlyMinTemp" th:text="${station.lowestMonthlyMinTemp}"> lowestMonthlyMinTemp </span>
         </div>
-        <!-- change to back button-->
-        <a href="/" class="btn btn-primary">Back</a>
+
+        <a href="/" class="btn btn-primary float-right">Back</a>
+        </div>
+
     </form>
 </body>
 </html>

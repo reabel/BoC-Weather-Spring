@@ -9,7 +9,7 @@
 - [x] Configure templates via Thymeleaf
   - [ ] Add generic header template to reduce code reuse
 - [x] Configure Data display for Grid
-  - [ ] add sorting based off of date selection
+  - [x] add sorting based off of date selection
   - [x] add navigation from grid to records
   - [x] Add full data display
   - [x] Add option to import CSV instead of manual init.
@@ -20,6 +20,9 @@
 - [x] rework error page to be more verbose
   - [ ] account for unspecified routes
 - [x] add sample CSV
-- [ ] cleanup date formatting on display
+- [x] cleanup date formatting on display
 - [x] update documentation
   - [ ] Document tests as well as error handling
+- [x] Add filter by date range
+  - [x] Filter via backend repository method
+  - [x] Front end date selection with submission

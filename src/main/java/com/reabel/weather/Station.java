@@ -1,6 +1,7 @@
 package com.reabel.weather;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -50,6 +51,11 @@ public class Station {
 
     public LocalDate getDate() {
         return this.date;
+    }
+
+    public String getDateFormattedString() {
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return this.date.format(dateFormat);
     }
 
     public String getMeanTemp() {

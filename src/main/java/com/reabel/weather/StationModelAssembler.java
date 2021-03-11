@@ -1,3 +1,6 @@
+/**
+ * This class is used primarly when using full rest mapping methods.
+ */
 package com.reabel.weather;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;

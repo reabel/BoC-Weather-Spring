@@ -54,6 +54,7 @@ class StationController {
         return assembler.toModel(station);
     }
 
+    // Ability to add new stations, (not implemented currently)
     @PutMapping("/stations/{id}")
     Station replaceStation(@RequestBody Station newStation, @PathVariable Long id) {
 
@@ -67,8 +68,9 @@ class StationController {
         });
     }
 
-    @DeleteMapping("/stations/{id}")
-    void deleteStation(@PathVariable Long id) {
-        repository.deleteById(id);
-    }
+    // Ability to remove stations, disabled as it's not currently necessary
+    // @DeleteMapping("/stations/{id}")
+    // void deleteStation(@PathVariable Long id) {
+    // repository.deleteById(id);
+    // }
 }

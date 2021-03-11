@@ -70,6 +70,10 @@ public class Station {
         return this.lowestMonthlyMinTemp;
     }
 
+    /*
+     * Currently there's no front end method of adding new Stations from the
+     * frontend however this could be added in the future.
+     */
     public void setId(Long id) {
         this.id = id;
     }

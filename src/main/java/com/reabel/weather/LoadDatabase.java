@@ -54,6 +54,16 @@ class LoadDatabase {
                     String station = x[0];
                     String province = x[1];
                     LocalDate date = LocalDate.parse(x[2], dateFormat);
+
+                    String meanTemp = x[3];
+                    String highestMonthlyMaxTemp = x[4];
+                    String LowestMonthlyMinTemp = x[5];
+
+                    /*
+                     * Previously mapped Temps to doubles but this presented an issue with default
+                     * values
+                     */
+
                     // Double meanTemp = (x[3] != null && x[3].length() > 0) ?
                     // Double.parseDouble(x[3]) : null;
                     // Double highestMonthlyMaxTemp = (x[4] != null && x[4].length() > 0) ?
@@ -61,9 +71,6 @@ class LoadDatabase {
                     // : null;
                     // Double LowestMonthlyMinTemp = (x[5] != null && x[5].length() > 0) ?
                     // Double.parseDouble(x[5]) : null;
-                    String meanTemp = x[3];
-                    String highestMonthlyMaxTemp = x[4];
-                    String LowestMonthlyMinTemp = x[5];
                     // log.info("Saving: " + x[0]);
                     repository.save(new Station(station, province, date, meanTemp, highestMonthlyMaxTemp,
                             LowestMonthlyMinTemp));

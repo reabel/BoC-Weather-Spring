@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+</head>
+<body>
+    
+    <div th:fragment="datePicker">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!-- Bootstrap Date-Picker Plugin -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+        <script>
+            $(document).ready(function(){
+                var date_input_from=$('input[name="dateFrom"]');
+                var date_input_to=$('input[name="dateTo"]');
+                var container=$('#dateFilter').length>0 ? $('#dateFilter').parent() : "body";
+                var options={
+                    format: 'dd/mm/yyyy',
+                    todayHighlight: true,
+                    autoclose: true,
+                };
+                date_input_from.datepicker(options);
+                date_input_to.datepicker(options);
+            });
+
+            function checkValues() {
+                console.log('validating');
+                var dateFrom = document.forms["myForm"]["dateFrom"].value;
+                var dateTo = document.forms["myForm"]["dateTo"].value;
+                //basic validation, could use regex to check date validity
+                //could default dateTo to today
+                if (!dateFrom ) {
+                    alert("From Date must be entered.");
+                    return false;
+                }
+                if (!dateTo) {
+                    alert("To Date must be entered.");
+                    return false;
+                }
+            }
+        </script>
+         <!--TODO: add bootstrap accordian so that filter options aren't always present-->
+        <div class="container">
+            
+            <div class="collapse" id="dateFilterCollapse">
+                <div class="container-fluid" style="margin: 50px; ">
+                    <div class="row">
+                        <!-- <div class="col-md-1col-sm-6 col-xs-12"> -->
+                            <form id="dateFilter" action="/filter?">
+                                <h3>Date Filter</h3>
+                                <div class="form-group"> <!-- Date input -->
+                                    <label class="control-label" for="dateFrom">From Date</label>
+                                    <input class="form-control" id="dateFrom" name="dateFrom" placeholder="MM/DD/YYYY" type="text" required/>
+                                </div>
+                                <div class="form-group"> <!-- Date input -->
+                                    <label class="control-label" for="dateTo">To Date</label>
+                                    <input class="form-control" id="dateTo" name="dateTo" placeholder="MM/DD/YYYY" type="text" required/>
+                                </div>
+                                <div class="form-group"> <!-- Submit button -->
+                                    <button class="btn btn-primary " name="submit" type="submit" onclick="return checkValues()">Submit</button>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -38,7 +38,7 @@ public class WeatherApplicationController {
     }
 
     @GetMapping("/record")
-    public String greeting(@RequestParam(name = "id", required = true, defaultValue = "Not Found") String name,
+    public String record(@RequestParam(name = "id", required = true, defaultValue = "Not Found") String name,
             Model model) {
         Long parsedId = Long.parseLong(name);
         Station station = repository.findById(parsedId).orElseThrow(() -> new StationNotFoundException(parsedId));

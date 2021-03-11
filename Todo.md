@@ -17,7 +17,9 @@
 - [x] Configure Display individual item display
   - ensure data is sent properly (important for double values)
 - [x] Add front end framework (ie bootstrap) as necessary
-- [ ] rework error page to be more verbose
+- [x] rework error page to be more verbose
+  - [ ] account for unspecified routes
 - [x] add sample CSV
 - [ ] cleanup date formatting on display
-- [ ] update documentation
+- [x] update documentation
+  - [ ] Document tests as well as error handling

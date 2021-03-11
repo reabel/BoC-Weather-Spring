@@ -26,7 +26,12 @@ class WeatherApplicationTests {
 	}
 
 	@Test
-	public void getTable() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/table")).andExpect(status().isOk());
+	public void getRecorcd() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/record?id=1")).andExpect(status().isOk());
+	}
+
+	@Test
+	public void getNonExistingRecord() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/record?id=-1")).andExpect(status().isNotFound());
 	}
 }

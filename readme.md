@@ -1,8 +1,6 @@
 # Readme
 
-[Requirements](./requirements.md)
-
-# Local Setup / Building
+## Local Setup / Building
 
 - Note: ensure JAVA_HOME is set on local environment
 
@@ -12,11 +10,11 @@
 - application can be found at `localhost:8080/`
   - the terminal should display the port should 8080 not be available. look for `Tomcat started on port(s): %PORT% (http) with context path ''`
 
-# Running Tests
+## Running Tests
 
 Tests can be ran using `./mvnw test` on the command line
 
-# On-going dev notes
+## On-going dev notes
 
 - Note: ensure JAVA_HOME is set on local environment
 
